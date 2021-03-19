@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Reminder</string>
+    <string name="default_date">1399/10/10</string>
+    <string name="default_hijri_date">10 رجب 1422</string>
+    <string name="default_gregorian_date">22 February 2021</string>
+    <string name="default_day">دوشنبه</string>
+    <string name="see_all">مشاهده همه</string>
+    <string name="calendar">سالنامه</string>
 </resources>
