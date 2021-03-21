@@ -12,5 +12,9 @@
     <color name="divider_color">#0D707070</color>
     <color name="red">#DC3B2F</color>
     <color name="green65">#65AC9B</color>
+    <color name="holiday_green">#4ED3D8</color>
+    <color name="number_color">#867D79</color>
     <color name="green">#008174</color>
+    <color name="page_calender_color">#F3F4F9</color>
+    <color name="background_view_pager_color">#F3F4F9</color>
 </resources>

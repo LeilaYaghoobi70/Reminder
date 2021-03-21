@@ -1,9 +1,95 @@
 <resources>
     <string name="app_name">Reminder</string>
+
+    <string name="code">fa</string>
     <string name="default_date">1399/10/10</string>
     <string name="default_hijri_date">10 رجب 1422</string>
     <string name="default_gregorian_date">22 February 2021</string>
     <string name="default_day">دوشنبه</string>
     <string name="see_all">مشاهده همه</string>
     <string name="calendar">سالنامه</string>
+    <string name="today">امروز</string>
+    <string name="equivalent_to">برابر با</string>
+    <string name="holiday_reason">تعطیل به مناسبت</string>
+    <string name="events">مناسبت‌ها</string>
+    <string name="nth_week_of_year">هفتهٔ %1$s سال</string>
+    <string name="moonInScorpio">ایام قمر در عقرب</string>
+    <string name="year_name">نام سال</string>
+    <string name="more">بیشتر</string>
+    <string name="zodiac">برج فلکی</string>
+    <string name="capricorn">جَدْی (بزغاله)</string>
+    <string name="aquarius">دلو (آبریز)</string>
+    <string name="pisces">حوت (ماهی)</string>
+    <string name="aries">حَمَل (بره)</string>
+    <string name="taurus">ثَور (گاو)</string>
+    <string name="gemini">جَوزا (دوپیکر)</string>
+    <string name="cancer">سَرَطان (خرچنگ)</string>
+    <string name="leo">اسد (شیر)</string>
+    <string name="virgo">سُنبُله (خوشه)</string>
+    <string name="libra">میزان (ترازو)</string>
+    <string name="scorpio">عقرب (کژدم)</string>
+    <string name="sagittarius">سفقَوس (کمان)</string>
+    <string name="year1">میمون</string>
+    <string name="year2">خروس</string>
+    <string name="year3">سگ</string>
+    <string name="year4">خوک</string>
+    <string name="year5">موش</string>
+    <string name="year6">گاو</string>
+    <string name="year7">پلنگ</string>
+    <string name="year8">خرگوش</string>
+    <string name="year9">اژدها</string>
+    <string name="year10">مار</string>
+    <string name="year11">اسب</string>
+    <string name="year12">گوسفند</string>
+    <string name="level">تراز</string>
+    <string name="empty">""</string>
+
+    <string name="capricorn_emoji" translatable="false">♑</string>
+    <string name="aquarius_emoji" translatable="false">♒</string>
+    <string name="pisces_emoji" translatable="false">♓</string>
+    <string name="aries_emoji" translatable="false">♈</string>
+    <string name="taurus_emoji" translatable="false">♉</string>
+    <string name="gemini_emoji" translatable="false">♊</string>
+    <string name="cancer_emoji" translatable="false">♋</string>
+    <string name="leo_emoji" translatable="false">♌</string>
+    <string name="virgo_emoji" translatable="false">♍</string>
+    <string name="libra_emoji" translatable="false">♎</string>
+    <string name="scorpio_emoji" translatable="false">♏</string>
+    <string name="sagittarius_emoji" translatable="false">♐</string>
+    <string name="not_set_time" translatable="false">--:--</string>
+
+
+    <string name="location_access">دسترسی به موقعیت مکانی</string>
+    <string name="phone_location_required">این قسمت از برنامه نیازمند گرفتن دسترسی مکان است، در غیر است می‌بایست طول و عرض جفرافیایی خود را به صورت دستی وارد کنید.</string>
+    <string name="calendar_access">دسترسی به تقویم دستگاه</string>
+    <string name="phone_calendar_required">ابتدا باید مجوز دسترسی به تقویم دستگاه را بدهید، اگر اجازه دسترسی به تقویم دستگاه دهید برنامه می‌تواند رویدادهای شخصی شما را در تقویم فارسی نمایش دهد.</string>
+    <string name="continue_button">ادامه</string>
+    <string name="date_copied_clipboard">«%1$s» به حافظه رونوشت شد</string>
+    <string name="cancel">لغو</string>
+
+    <string name="am">ق.ظ</string>
+    <string name="pm">ب.ظ</string>
+
+    <string name="imsak">امساک</string>
+    <string name="fajr">اذان صبح</string>
+    <string name="dhuhr">اذان ظهر</string>
+    <string name="asr">عصر</string>
+    <string name="maghrib">اذان مغرب</string>
+    <string name="isha">عشاء</string>
+    <string name="sunrise">طلوع</string>
+    <string name="sunset">غروب</string>
+    <string name="midnight">نیمه‌شب</string>
+    <string name="owghat">اوقات شرعی</string>
+
+    <string name="latitude">عرض جغرافیایی</string>
+    <string name="longitude">طول جغرافیایی</string>
+    <string name="iran_time">وقت ایران</string>
+
+    <string name="n_minutes">%1$s دقیقه</string>
+    <string name="n_hours">%1$s ساعت</string>
+    <string name="n_minutes_and_hours">%1$s ساعت و %2$s دقیقه</string>
+    <string name="n_till">%1$s تا %2$s</string>
+    <string name="ask_user_to_set_location">برای نمایش اوقات شرعی مکان خود را در تنظیمات انتخاب نمایید</string>
+    <string name="week_days_name_column">ستون %1$s در جدول روزها</string>
+
 </resources>

@@ -39,10 +39,11 @@
             app:layout_constraintTop_toTopOf="@id/calenderImageView"
             app:layout_constraintBottom_toBottomOf="@id/calenderImageView"/>
 
-        <com.wdullaer.materialdatetimepicker.date.AccessibleDateAnimator
+        <ly.project.reminder.calenderpager.CalendarPager
             android:id="@+id/calenderPicker"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background_view_pager_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/calenderImageView"/>
@@ -94,6 +95,7 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </LinearLayout>
