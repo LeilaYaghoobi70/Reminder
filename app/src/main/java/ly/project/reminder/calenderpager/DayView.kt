@@ -1,9 +1,9 @@
 package ly.project.reminder.calenderpager
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
-import android.util.TypedValue
 import android.view.View
 
 import androidx.core.content.ContextCompat
@@ -40,6 +40,7 @@ class DayView @JvmOverloads constructor(
         color = ContextCompat.getColor(context, R.color.green65)
     }
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private lateinit var rectF :   RectF
 
     private val bounds = Rect()
     private val drawingRect = RectF()
@@ -57,6 +58,11 @@ class DayView @JvmOverloads constructor(
     private var isNumber: Boolean = false
     private var header = ""
 
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        rectF = RectF(5F,5f,width.toFloat()-5,height.toFloat()-5)
+    }
+
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         val width = width
@@ -69,16 +75,16 @@ class DayView @JvmOverloads constructor(
         val yOffsetToApply = 0
 
         if (dayIsSelected) {
-            canvas.drawCircle(
-                width / 2f, height / 2f, (radius - 5).toFloat(),
+            canvas.drawRoundRect(
+              rectF, 20f,  20f,
                 selectedPaint
             )
 
         }
 
         if (today) {
-            canvas.drawCircle(
-                width / 2f, height / 2f, (radius - 5).toFloat(),
+            canvas.drawRoundRect(
+                rectF, 20f,  20f,
                 todayPaint
             )
 
@@ -86,9 +92,9 @@ class DayView @JvmOverloads constructor(
 
         val color: Int = if (isNumber) {
             if (holiday)
-                if (dayIsSelected) R.color.white else R.color.number_color
+                if (dayIsSelected) ContextCompat.getColor(context,R.color.white) else ContextCompat.getColor(context,R.color.holiday_green)
             else
-                if (dayIsSelected) R.color.white else R.color.number_color
+                if (dayIsSelected)  ContextCompat.getColor(context,R.color.white) else  ContextCompat.getColor(context,R.color.number_color)
         } else {
             R.color.red
         }
@@ -98,7 +104,7 @@ class DayView @JvmOverloads constructor(
 
         // a11y improvement
         if (isHighTextContrastEnabled && holiday)
-            eventBarPaint.color = color
+            eventBarPaint.color = ContextCompat.getColor(context,R.color.number_color)
 
         if (hasEvent) {
             canvas.drawLine(
@@ -132,8 +138,7 @@ class DayView @JvmOverloads constructor(
         canvas.drawText(text, xPos.toFloat(), yPos.toFloat(), textPaint)
 
         textPaint.color = if (dayIsSelected) ContextCompat.getColor(
-            context,
-            R.color.green65
+            context, R.color.green65
         ) else ContextCompat.getColor(context, R.color.green65)
         textPaint.textSize = textSize / 2f
         if (header.isNotEmpty()) {

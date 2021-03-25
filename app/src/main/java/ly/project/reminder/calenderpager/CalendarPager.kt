@@ -96,7 +96,7 @@ class CalendarPager @JvmOverloads constructor(
 
         override fun getItemCount() = monthsLimit
 
-        inner class ViewHolder(val binding: FragmentMonthBinding) :
+        inner class ViewHolder(private val binding: FragmentMonthBinding) :
             RecyclerView.ViewHolder(binding.root) {
 
             private val selectableItemBackground = TypedValue().also {
@@ -115,13 +115,8 @@ class CalendarPager @JvmOverloads constructor(
             var refresh = fun(_: Boolean, _: Long) {}
 
             init {
-                val isRTL = isRTL(binding.root.context)
-
                 binding.next.apply {
-                    setImageResource(
-                        if (isRTL) R.drawable.ic_keyboard_arrow_left
-                        else R.drawable.ic_keyboard_arrow_right
-                    )
+                    setImageResource(R.drawable.ic_keyboard_arrow_left)
                     setOnClickListener { viewPager.setCurrentItem(viewPager.currentItem + 1, true) }
                     setOnLongClickListener {
                         viewPager.setCurrentItem(viewPager.currentItem + 12, false)
@@ -131,10 +126,7 @@ class CalendarPager @JvmOverloads constructor(
                 }
 
                 binding.prev.apply {
-                    setImageResource(
-                        if (isRTL) R.drawable.ic_keyboard_arrow_right
-                        else R.drawable.ic_keyboard_arrow_left
-                    )
+                    setImageResource(R.drawable.ic_keyboard_arrow_right)
                     setOnClickListener { viewPager.setCurrentItem(viewPager.currentItem - 1, true) }
                     setOnLongClickListener {
                         viewPager.setCurrentItem(viewPager.currentItem - 12, false)

@@ -25,19 +25,30 @@
             android:layout_height="wrap_content"
             android:background="@mipmap/calender"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/normal_bold"
             android:text="@string/calendar"
-            android:layout_marginEnd="6dp"
             android:textColor="@color/green"
             android:textSize="14sp"
-            android:fontFamily="@font/normal_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/calenderImageView"
             app:layout_constraintEnd_toStartOf="@+id/calenderImageView"
-            app:layout_constraintTop_toTopOf="@id/calenderImageView"
-            app:layout_constraintBottom_toBottomOf="@id/calenderImageView"/>
+            app:layout_constraintTop_toTopOf="@+id/calenderImageView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/monthTextView"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@color/background_view_pager_color"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/number_color"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/calenderImageView" />
 
         <ly.project.reminder.calenderpager.CalendarPager
             android:id="@+id/calenderPicker"
@@ -46,13 +57,16 @@
             android:background="@color/background_view_pager_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/calenderImageView"/>
+            app:layout_constraintTop_toBottomOf="@+id/monthTextView"
+            android:layoutDirection="rtl"/>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/lampIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/lamp"
+            android:layoutDirection="ltr"
+            android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calenderPicker" />
 
@@ -60,13 +74,11 @@
             android:id="@+id/appCompatTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
             android:fontFamily="@font/normal_bold"
             android:text="یادداشت ویادآورهای امروز"
             android:textColor="@color/green"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/lampIcon"
-            app:layout_constraintEnd_toEndOf="@id/lampIcon"
             app:layout_constraintEnd_toStartOf="@+id/lampIcon"
             app:layout_constraintTop_toTopOf="@+id/lampIcon" />
 
@@ -74,28 +86,26 @@
             android:id="@+id/appCompatTextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
             android:fontFamily="@font/normal_bold"
             android:text="@string/see_all"
             android:textColor="@color/green"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/appCompatTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/lampIcon"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/appCompatTextView" />
+            app:layout_constraintTop_toTopOf="@+id/lampIcon" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
 
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </LinearLayout>

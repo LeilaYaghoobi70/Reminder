@@ -10,6 +10,8 @@ import androidx.fragment.app.viewModels
 
 import ly.project.reminder.R
 import ly.project.reminder.databinding.HomeFragmentBinding
+import ly.project.reminder.utils.formatNumber
+import ly.project.reminder.utils.getMonthName
 import javax.inject.Inject
 
 class HomeFragment : Fragment() {
@@ -36,8 +38,14 @@ class HomeFragment : Fragment() {
                 setRightIcon(R.drawable.ic_setting, null)
             }
 
+            calenderPicker.apply {
+                onMonthSelected = fun() {
+                selectedMonth.let {
+                    monthTextView.text  = getMonthName(it)
+                }
+            }
 
-
+            }
         }
         return binding?.root
     }

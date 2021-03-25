@@ -12,5 +12,5 @@
     <dimen name="day_item_arabic_digits_text_size">18dp</dimen>
     <dimen name="day_item_persian_digits_text_size">25dp</dimen>
 
-    <dimen name="text_size">14sp</dimen>
+    <dimen name="text_size">17sp</dimen>
 </resources>
