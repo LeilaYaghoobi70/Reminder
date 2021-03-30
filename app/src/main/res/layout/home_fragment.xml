@@ -13,6 +13,51 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/gregorianDateTextView"
+            android:text="5 Feb 2020"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="5dp"
+            android:layout_height="2dp"
+            android:background="@color/green"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shamsiTextView"
+            android:text="20 فروردین 1399"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="5dp"
+            android:layout_height="2dp"
+            android:background="@color/green"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dayTextView"
+            android:text="دوشنبه"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

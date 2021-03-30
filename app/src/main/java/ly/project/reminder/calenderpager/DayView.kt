@@ -12,7 +12,7 @@ import ly.project.reminder.utils.formatNumber
 import ly.project.reminder.utils.isHighTextContrastEnabled
 import ly.project.reminder.utils.isNonArabicScriptSelected
 import kotlin.math.min
-
+// Created by Leila :)
 class DayView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -44,6 +44,8 @@ class DayView @JvmOverloads constructor(
 
     private val bounds = Rect()
     private val drawingRect = RectF()
+    private val headerPaint = Paint()
+    private val headerRect = RectF()
     private var text = ""
     private var today: Boolean = false
     private var dayIsSelected: Boolean = false
@@ -74,6 +76,8 @@ class DayView @JvmOverloads constructor(
         drawingRect.inset(radius * 0.1f, radius * 0.1f)
         val yOffsetToApply = 0
 
+
+
         if (dayIsSelected) {
             canvas.drawRoundRect(
               rectF, 20f,  20f,
@@ -96,13 +100,18 @@ class DayView @JvmOverloads constructor(
             else
                 if (dayIsSelected)  ContextCompat.getColor(context,R.color.white) else  ContextCompat.getColor(context,R.color.number_color)
         } else {
-            R.color.red
+            ContextCompat.getColor(context,R.color.number_color)
+        }
+
+        if (!isNumber){
+            headerPaint.color  = ContextCompat.getColor(context, R.color.header_color)
+            headerRect.set(0F,0F+2 , width.toFloat() , drawingRect.height() +10)
+            canvas.drawRoundRect(headerRect,0F,0F ,headerPaint )
         }
 
         eventBarPaint.color =
             if (dayIsSelected) ContextCompat.getColor(context, R.color.green65) else color
 
-        // a11y improvement
         if (isHighTextContrastEnabled && holiday)
             eventBarPaint.color = ContextCompat.getColor(context,R.color.number_color)
 
@@ -140,6 +149,7 @@ class DayView @JvmOverloads constructor(
         textPaint.color = if (dayIsSelected) ContextCompat.getColor(
             context, R.color.green65
         ) else ContextCompat.getColor(context, R.color.green65)
+
         textPaint.textSize = textSize / 2f
         if (header.isNotEmpty()) {
             val headerXPos = (width - textPaint.measureText(header).toInt()) / 2F
