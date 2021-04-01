@@ -1,6 +1,5 @@
 package ly.project.reminder.calenderpager
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
@@ -12,7 +11,7 @@ import ly.project.reminder.utils.formatNumber
 import ly.project.reminder.utils.isHighTextContrastEnabled
 import ly.project.reminder.utils.isNonArabicScriptSelected
 import kotlin.math.min
-// Created by Leila :)
+
 class DayView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -87,11 +86,8 @@ class DayView @JvmOverloads constructor(
         }
 
         if (today) {
-            canvas.drawRoundRect(
-                rectF, 20f,  20f,
-                todayPaint
-            )
-
+            rectF.inset(1F,1F)
+            canvas.drawRoundRect(rectF, 20f,  20f, todayPaint)
         }
 
         val color: Int = if (isNumber) {

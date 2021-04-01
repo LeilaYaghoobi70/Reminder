@@ -20,8 +20,6 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-
-
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/gregorianDateTextView"
             android:text="5 Feb 2020"
@@ -61,14 +59,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="12dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/calenderImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/calender"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/ic_calender"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,8 +76,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/normal_bold"
             android:text="@string/calendar"
-            android:textColor="@color/green"
+            android:textColor="@color/number_color"
             android:textSize="14sp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/calenderImageView"
             app:layout_constraintEnd_toStartOf="@+id/calenderImageView"
             app:layout_constraintTop_toTopOf="@+id/calenderImageView" />
@@ -106,23 +105,52 @@
             android:layoutDirection="rtl"/>
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/lampIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/lamp"
-            android:layoutDirection="ltr"
+            android:id="@+id/occasionsIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/ic_occasion"
             android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calenderPicker" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/occasionsTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="مناسبت ها"
+            android:textColor="@color/number_color"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/occasionsIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/occasionsIcon"
+            app:layout_constraintTop_toTopOf="@+id/occasionsIcon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/occasionsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/occasionsIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="12dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/lampIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/ic_lamp"
+            android:layoutDirection="ltr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/occasionsTextView" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/appCompatTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/normal_bold"
-            android:text="یادداشت ویادآورهای امروز"
-            android:textColor="@color/green"
+            android:text="یادداشت ویادآور امروز"
+            android:textColor="@color/number_color"
             android:textSize="14sp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/lampIcon"
             app:layout_constraintEnd_toStartOf="@+id/lampIcon"
             app:layout_constraintTop_toTopOf="@+id/lampIcon" />
@@ -133,8 +161,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/normal_bold"
             android:text="@string/see_all"
-            android:textColor="@color/green"
+            android:textColor="@color/number_color"
             android:textSize="14sp"
+            android:layout_marginStart="12dp"
             app:layout_constraintBottom_toBottomOf="@+id/lampIcon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/lampIcon" />
@@ -143,12 +172,19 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_flower"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+            app:layout_constraintStart_toStartOf="@+id/recyclerView"
+            android:layout_marginBottom="12dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

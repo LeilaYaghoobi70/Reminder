@@ -6,7 +6,7 @@
     <string name="default_hijri_date">10 رجب 1422</string>
     <string name="default_gregorian_date">22 February 2021</string>
     <string name="default_day">دوشنبه</string>
-    <string name="see_all">مشاهده همه</string>
+    <string name="see_all"> همه </string>
     <string name="calendar">سالنامه</string>
     <string name="today">امروز</string>
     <string name="equivalent_to">برابر با</string>
