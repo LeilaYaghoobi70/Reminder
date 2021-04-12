@@ -91,5 +91,8 @@
     <string name="n_till">%1$s تا %2$s</string>
     <string name="ask_user_to_set_location">برای نمایش اوقات شرعی مکان خود را در تنظیمات انتخاب نمایید</string>
     <string name="week_days_name_column">ستون %1$s در جدول روزها</string>
+    <string name="date">تاریخ</string>
+    <string name="title">عنوان</string>
+    <string name="note">یادداشت</string>
 
 </resources>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical">
+
+    <ly.project.reminder.view.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp">
+
+            <View
+                android:id="@+id/circleView"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/circle"
+                android:backgroundTint="@color/green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dateTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:gravity="center"
+                android:text="@string/date"
+                android:textColor="@color/number_color"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/circleView"
+                app:layout_constraintEnd_toStartOf="@id/circleView"
+                app:layout_constraintTop_toTopOf="@+id/circleView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/monthTextView"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/background_view_pager_color"
+                android:gravity="center"
+                android:textColor="@color/number_color"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/dateTitleTextView" />
+
+            <ly.project.reminder.calenderpager.CalendarPager
+                android:id="@+id/calenderPicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_view_pager_color"
+                android:layoutDirection="rtl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/monthTextView" />
+
+            <View
+                android:id="@+id/circleView2"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/circle"
+                android:backgroundTint="@color/green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/calenderPicker" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:gravity="center"
+                android:text="@string/title"
+                android:textColor="@color/number_color"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/circleView2"
+                app:layout_constraintEnd_toStartOf="@id/circleView2"
+                app:layout_constraintTop_toTopOf="@+id/circleView2" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/titleEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="12dp"
+                android:background="@null"
+                android:gravity="start"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:textColor="@color/number_color"
+                android:textColorLink="@color/background_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@color/white_f3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleEditText" />
+
+            <View
+                android:id="@+id/descriptionView"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/circle"
+                android:backgroundTint="@color/green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/descriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:gravity="center"
+                android:text="@string/note"
+                android:textColor="@color/number_color"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/descriptionView"
+                app:layout_constraintEnd_toStartOf="@id/descriptionView"
+                app:layout_constraintTop_toTopOf="@+id/descriptionView" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/descriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/corner_12white"
+                android:gravity="start"
+                android:padding="6dp"
+                android:textColor="@color/number_color"
+                android:textColorLink="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
+
+            <View
+                android:id="@+id/reminderView"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/circle"
+                android:backgroundTint="@color/green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/descriptionEditText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/reminderTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:gravity="center"
+                android:text="@string/note"
+                android:textColor="@color/number_color"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/reminderView"
+                app:layout_constraintEnd_toStartOf="@id/reminderView"
+                app:layout_constraintTop_toTopOf="@+id/reminderView" />
+
+            <Switch
+                android:id="@+id/reminderSwitch"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:background="@drawable/corner_12white"
+                android:backgroundTint="@color/pink2"
+                android:layout_marginStart="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/reminderView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/reminderView"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/corner_12white"
+                android:backgroundTint="@color/green_2"
+                android:layout_margin="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reminderSwitch">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>
+
+
+

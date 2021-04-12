@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import io.github.persiancalendar.calendar.AbstractDate
 
 import ly.project.reminder.R
@@ -21,10 +23,7 @@ class HomeFragment : Fragment() {
     lateinit var viewModelFactory: HomeViewModelFactory
 
     val viewModel: HomeViewModel by viewModels {
-        GenericSavedStateViewModelFactory(
-            viewModelFactory,
-            this
-        )
+        GenericSavedStateViewModelFactory(viewModelFactory, this)
     }
 
     private var binding: HomeFragmentBinding? = null
@@ -37,28 +36,43 @@ class HomeFragment : Fragment() {
                 setLeftIcon(R.drawable.ic_home, null)
                 setRightIcon(R.drawable.ic_setting, null)
             }
+            dayTextView.text = getWeekDayName(getTodayOfCalendar(mainCalendar).dayOfMonth)
+
+            monthShamsiTextView.text = getMonthName(getTodayOfCalendar(mainCalendar))
+            dayShamsiTextView.text = getTodayOfCalendar(mainCalendar).dayOfMonth.toString()
+            yearShamsiTextView.text = getTodayOfCalendar(mainCalendar).year.toString()
+
+            monthGeorgianTextView.text = getMonthName(getTodayOfCalendar(CalendarType.GREGORIAN))
+            dayGeorgianTextView.text =getTodayOfCalendar(CalendarType.GREGORIAN).dayOfMonth.toString()
+            yearGeorgianTextView.text = getTodayOfCalendar(CalendarType.GREGORIAN).year.toString()
+
 
             calenderPicker.apply {
+
                 onMonthSelected =
-                    fun() { selectedMonth.let { monthTextView.text = getMonthName(it) } }
+                    fun() {
+                        selectedMonth.let { monthTextView.text = getMonthName(it) }
+                    }
+                onDayClicked = {
+                    var date = getDateFromJdnOfCalendar(mainCalendar, it)
+                    dayShamsiTextView.text = date.dayOfMonth.toString()
+                    monthShamsiTextView.text = getMonthName(date)
+                    yearShamsiTextView.text =  date.year.toString()
+
+                     date = getDateFromJdnOfCalendar(CalendarType.GREGORIAN, it)
+                    dayGeorgianTextView.text = date.dayOfMonth.toString()
+                    monthGeorgianTextView.text =getMonthName(date)
+                    yearGeorgianTextView.text = date.year.toString()
+
+                }
+                addButton.setOnClickListener {
+                    NavHostFragment.findNavController(this@HomeFragment).navigate(R.id.action_homeFragment_to_addedNoteFragment)
+                }
+
             }
 
-            setDate()
         }
         return binding?.root
-    }
-
-    private fun HomeFragmentBinding.setDate() {
-        dayTextView.text = getWeekDayName(getTodayOfCalendar(mainCalendar).dayOfMonth)
-        (" ${getTodayOfCalendar(mainCalendar).dayOfMonth}  " +
-                "${getMonthName(getTodayOfCalendar(mainCalendar))}${
-                    "  ${getTodayOfCalendar(mainCalendar).year}"
-                }").also { shamsiTextView.text = it }
-
-        (" ${getTodayOfCalendar(CalendarType.GREGORIAN).dayOfMonth}  " +
-                "${getMonthName(getTodayOfCalendar(CalendarType.GREGORIAN))}${
-                    "  ${getTodayOfCalendar(CalendarType.GREGORIAN).year}"
-                }").also { gregorianDateTextView.text = it }
     }
 
 

@@ -13,50 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/gregorianDateTextView"
-            android:text="5 Feb 2020"
-            android:textColor="@color/green"
-            android:textStyle="bold"
-            android:layout_margin="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <View
-            android:layout_width="5dp"
-            android:layout_height="2dp"
-            android:background="@color/green"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/shamsiTextView"
-            android:text="20 فروردین 1399"
-            android:textColor="@color/green"
-            android:textStyle="bold"
-            android:layout_margin="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <View
-            android:layout_width="5dp"
-            android:layout_height="2dp"
-            android:background="@color/green"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/dayTextView"
-            android:text="دوشنبه"
-            android:textColor="@color/green"
-            android:textStyle="bold"
-            android:layout_margin="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -74,24 +30,42 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:fontFamily="@font/normal_bold"
             android:text="@string/calendar"
             android:textColor="@color/number_color"
             android:textSize="14sp"
-            android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/calenderImageView"
             app:layout_constraintEnd_toStartOf="@+id/calenderImageView"
             app:layout_constraintTop_toTopOf="@+id/calenderImageView" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dayTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/corner_12"
+            android:paddingStart="6dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="6dp"
+            android:paddingBottom="3dp"
+            android:text="دوشنبه"
+            android:textColor="@color/pink"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/monthTextView"
             android:layout_width="match_parent"
             android:layout_height="36dp"
+            android:layout_marginTop="12dp"
             android:background="@color/background_view_pager_color"
             android:gravity="center"
-            android:textSize="16sp"
             android:textColor="@color/number_color"
-            android:layout_marginTop="12dp"
+            android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@+id/calenderImageView" />
 
         <ly.project.reminder.calenderpager.CalendarPager
@@ -99,17 +73,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/background_view_pager_color"
+            android:layoutDirection="rtl"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/monthTextView"
-            android:layoutDirection="rtl"/>
+            app:layout_constraintTop_toBottomOf="@+id/monthTextView" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/occasionsIcon"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:background="@drawable/ic_occasion"
             android:layout_marginTop="12dp"
+            android:background="@drawable/ic_occasion"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calenderPicker" />
 
@@ -121,70 +95,140 @@
             android:text="مناسبت ها"
             android:textColor="@color/number_color"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/occasionsIcon"
             app:layout_constraintBottom_toBottomOf="@+id/occasionsIcon"
+            app:layout_constraintEnd_toStartOf="@+id/occasionsIcon"
             app:layout_constraintTop_toTopOf="@+id/occasionsIcon" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/occasionsTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/occasionsIcon"
+            android:layout_margin="12dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="12dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/occasionsIcon" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/lampIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="@drawable/ic_lamp"
-            android:layoutDirection="ltr"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/occasionsTextView" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/appCompatTextView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="0dp"
+            android:weightSum="4"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/normal_bold"
-            android:text="یادداشت ویادآور امروز"
-            android:textColor="@color/number_color"
-            android:textSize="14sp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/lampIcon"
-            app:layout_constraintEnd_toStartOf="@+id/lampIcon"
-            app:layout_constraintTop_toTopOf="@+id/lampIcon" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/appCompatTextView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/normal_bold"
-            android:text="@string/see_all"
-            android:textColor="@color/number_color"
-            android:textSize="14sp"
-            android:layout_marginStart="12dp"
-            app:layout_constraintBottom_toBottomOf="@+id/lampIcon"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/lampIcon" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
             android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/occasionsTextView">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_flower"
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dayShamsiTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:gravity="center"
+                    android:textColor="@color/number_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/monthShamsiTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_margin="6dp"
+                    android:gravity="center"
+                    android:textColor="@color/number_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/yearShamsiTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:gravity="center"
+                    android:textColor="@color/number_color" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="100dp"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dayGeorgianTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:gravity="center"
+                    android:textColor="@color/number_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/monthGeorgianTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/number_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/yearGeorgianTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:gravity="center"
+                    android:textColor="@color/number_color" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/corner12"
+            android:layout_margin="12dp"
+            android:backgroundTint="@color/green"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/recyclerView"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            android:layout_marginBottom="12dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/corner12"
+                android:text="+ افزودن یاداشت"
+                android:textSize="14sp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/green65"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/showButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/corner12"
+                android:text=" مشاهده یاداشت ها"
+                android:textSize="14sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
