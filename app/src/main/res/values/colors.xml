@@ -20,7 +20,9 @@
     <color name="header_color">#FEFEFE</color>
     <color name="pink">#FF9EB1</color>
     <color name="pink2">#FF998F</color>
+    <color name="pink3">#EC4982</color>
     <color name="green_FF">#E0F4F4</color>
     <color name="white_f3">#F3F4F9</color>
     <color name="green_2">#EEF8F3</color>
+    <color name="blue">#4ED3D8</color>
 </resources>

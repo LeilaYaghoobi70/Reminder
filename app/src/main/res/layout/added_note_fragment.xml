@@ -34,7 +34,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <ly.project.reminder.view.CustomTextVIew
                 android:id="@+id/dateTitleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
                 app:layout_constraintEnd_toStartOf="@id/circleView"
                 app:layout_constraintTop_toTopOf="@+id/circleView" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <ly.project.reminder.view.CustomTextVIew
                 android:id="@+id/monthTextView"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
@@ -79,7 +79,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/calenderPicker" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <ly.project.reminder.view.CustomTextVIew
                 android:id="@+id/titleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -92,33 +92,25 @@
                 app:layout_constraintEnd_toStartOf="@id/circleView2"
                 app:layout_constraintTop_toTopOf="@+id/circleView2" />
 
-            <androidx.appcompat.widget.AppCompatEditText
+            <ly.project.reminder.view.CustomEditText
                 android:id="@+id/titleEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginEnd="12dp"
-                android:background="@null"
+                android:textDirection="rtl"
                 android:gravity="start"
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textSize="12sp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
                 android:textColor="@color/number_color"
                 android:textColorLink="@color/background_color"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
-
-            <View
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:background="@color/white_f3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleEditText" />
 
             <View
                 android:id="@+id/descriptionView"
@@ -129,9 +121,9 @@
                 android:background="@drawable/circle"
                 android:backgroundTint="@color/green"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/divider" />
+                app:layout_constraintTop_toBottomOf="@id/titleEditText" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <ly.project.reminder.view.CustomTextVIew
                 android:id="@+id/descriptionTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -144,16 +136,20 @@
                 app:layout_constraintEnd_toStartOf="@id/descriptionView"
                 app:layout_constraintTop_toTopOf="@+id/descriptionView" />
 
-            <androidx.appcompat.widget.AppCompatEditText
+            <ly.project.reminder.view.CustomEditText
                 android:id="@+id/descriptionEditText"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginEnd="12dp"
-                android:background="@drawable/corner_12white"
                 android:gravity="start"
-                android:padding="6dp"
+                android:textSize="12sp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textDirection="rtl"
                 android:textColor="@color/number_color"
                 android:textColorLink="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -171,13 +167,13 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/descriptionEditText" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <ly.project.reminder.view.CustomTextVIew
                 android:id="@+id/reminderTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
                 android:gravity="center"
-                android:text="@string/note"
+                android:text="@string/reminder_me"
                 android:textColor="@color/number_color"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/reminderView"
@@ -188,28 +184,41 @@
                 android:id="@+id/reminderSwitch"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
-                android:background="@drawable/corner_12white"
-                android:backgroundTint="@color/pink2"
+                android:theme="@style/switchColor"
                 android:layout_marginStart="12dp"
                 app:layout_constraintBottom_toBottomOf="@+id/reminderView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/reminderView"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@drawable/corner_12white"
-                android:backgroundTint="@color/green_2"
-                android:layout_margin="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/reminderSwitch">
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/timePickerRecyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </FrameLayout>
+                    android:layout_height="150dp"
+                    android:background="@drawable/corner_12_greenff"
+                    android:backgroundTint="@color/green_2"
+                    android:layout_margin="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/reminderSwitch" />
+
+            <ly.project.reminder.view.CustomBottom
+                android:layout_width="match_parent"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="24dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:backgroundTint="@color/green"
+                android:text="@string/save"
+                android:background="@drawable/corner_12_greenff"
+                app:layout_constraintTop_toBottomOf="@id/timePickerRecyclerView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

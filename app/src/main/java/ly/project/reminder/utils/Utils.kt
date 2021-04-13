@@ -1,6 +1,7 @@
 package ly.project.reminder.utils
 
 import android.content.Context
+import android.content.res.Resources
 import android.media.AudioManager
 import android.util.Log
 import android.view.View
@@ -492,14 +493,15 @@ fun applyAppLanguage(context: Context) {
     resources.updateConfiguration(config, resources.displayMetrics)
 }
 
-//fun Context.withLocale(): Context {
-//    val config = resources.configuration
-//    val locale = Locale(getOnlyLanguage(language))
-//    Locale.setDefault(locale)
-//    config.setLocale(locale)
-//    config.setLayoutDirection(when (language) {
-//        LANG_AZB, LANG_GLK -> Locale(LANG_FA)
-//        else -> locale
-//    })
-//    return createConfigurationContext(config)
-//}
+fun pxToDp(px: Int) =
+    px / Resources.getSystem().displayMetrics.density
+
+fun dpToPx(dp: Int) =
+    dp * Resources.getSystem().displayMetrics.density
+
+fun pxToSp(context: Context, px: Float): Float =
+    px / (context.resources.displayMetrics.scaledDensity)
+fun spToPx( sp: Int)  = sp * Resources.getSystem().getDisplayMetrics().scaledDensity
+
+
+

@@ -26,31 +26,29 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <ly.project.reminder.view.CustomTextVIew
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:fontFamily="@font/normal_bold"
             android:text="@string/calendar"
             android:textColor="@color/number_color"
             android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/calenderImageView"
             app:layout_constraintEnd_toStartOf="@+id/calenderImageView"
             app:layout_constraintTop_toTopOf="@+id/calenderImageView" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <ly.project.reminder.view.CustomTextVIew
             android:id="@+id/dayTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:background="@drawable/corner_12"
             android:paddingStart="6dp"
-            android:paddingTop="3dp"
             android:paddingEnd="6dp"
-            android:paddingBottom="3dp"
-            android:text="دوشنبه"
-            android:textColor="@color/pink"
+            android:textColor="@color/pink3"
+            android:gravity="center"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textView"
@@ -87,7 +85,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calenderPicker" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <ly.project.reminder.view.CustomTextVIew
             android:id="@+id/occasionsTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -125,7 +123,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center">
-                <androidx.appcompat.widget.AppCompatTextView
+
+                <ly.project.reminder.view.CustomTextVIew
                     android:id="@+id/dayShamsiTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -133,7 +132,7 @@
                     android:gravity="center"
                     android:textColor="@color/number_color" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <ly.project.reminder.view.CustomTextVIew
                     android:id="@+id/monthShamsiTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -142,7 +141,7 @@
                     android:gravity="center"
                     android:textColor="@color/number_color" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <ly.project.reminder.view.CustomTextVIew
                     android:id="@+id/yearShamsiTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -163,7 +162,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center">
-                <androidx.appcompat.widget.AppCompatTextView
+
+                <ly.project.reminder.view.CustomTextVIew
                     android:id="@+id/dayGeorgianTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -171,7 +171,7 @@
                     android:gravity="center"
                     android:textColor="@color/number_color" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <ly.project.reminder.view.CustomTextVIew
                     android:id="@+id/monthGeorgianTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -180,7 +180,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/number_color" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <ly.project.reminder.view.CustomTextVIew
                     android:id="@+id/yearGeorgianTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -204,12 +204,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
-            <androidx.appcompat.widget.AppCompatButton
+            <ly.project.reminder.view.CustomBottom
                 android:id="@+id/addButton"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="@drawable/corner12"
+                android:gravity="center"
                 android:text="+ افزودن یاداشت"
                 android:textSize="14sp" />
             <View
@@ -217,10 +218,11 @@
                 android:layout_height="match_parent"
                 android:background="@color/green65"/>
 
-            <androidx.appcompat.widget.AppCompatButton
+            <ly.project.reminder.view.CustomBottom
                 android:id="@+id/showButton"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:layout_height="match_parent"
                 android:background="@drawable/corner12"
                 android:text=" مشاهده یاداشت ها"
