@@ -1,8 +1,10 @@
 package ly.project.reminder.utils
 
+import android.app.Activity
 import android.content.Context
 import android.content.res.Resources
 import android.media.AudioManager
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import android.view.accessibility.AccessibilityManager
@@ -263,13 +265,14 @@ fun loadEvents(context: Context) {
         e.printStackTrace()
     }
 }
+fun JSONArray.toStringList() = (0 until length()).map { getString(it) }
 
 fun loadLanguageResource(context: Context) = try {
     val messages = JSONObject(
         readRawResource(context, R.raw.fa)
     )
 
-    fun JSONArray.toStringList() = (0 until length()).map { getString(it) }
+
 
     persianMonths = messages.getJSONArray("PersianCalendarMonths").toStringList()
     islamicMonths = messages.getJSONArray("IslamicCalendarMonths").toStringList()
@@ -501,7 +504,11 @@ fun dpToPx(dp: Int) =
 
 fun pxToSp(context: Context, px: Float): Float =
     px / (context.resources.displayMetrics.scaledDensity)
-fun spToPx( sp: Int)  = sp * Resources.getSystem().getDisplayMetrics().scaledDensity
+fun spToPx(sp: Int)  = sp * Resources.getSystem().displayMetrics.scaledDensity
+
+fun getScreenHeight(context: Context) =   context.resources.displayMetrics. heightPixels
+
+
 
 
 

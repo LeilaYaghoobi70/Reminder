@@ -192,16 +192,33 @@
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/timePickerRecyclerView"
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/holderTimePicker"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
+                    android:weightSum="4"
+                    android:gravity="center"
                     android:background="@drawable/corner_12_greenff"
                     android:backgroundTint="@color/green_2"
                     android:layout_margin="12dp"
+                    android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/reminderSwitch" />
+                    app:layout_constraintTop_toBottomOf="@+id/reminderSwitch" >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/hoursRecyclerView"
+                        android:layout_width= "0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/minutesRecyclerView"
+                        android:layout_width= "0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
             <ly.project.reminder.view.CustomBottom
                 android:layout_width="match_parent"
@@ -214,7 +231,7 @@
                 android:backgroundTint="@color/green"
                 android:text="@string/save"
                 android:background="@drawable/corner_12_greenff"
-                app:layout_constraintTop_toBottomOf="@id/timePickerRecyclerView"
+                app:layout_constraintTop_toBottomOf="@id/holderTimePicker"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>

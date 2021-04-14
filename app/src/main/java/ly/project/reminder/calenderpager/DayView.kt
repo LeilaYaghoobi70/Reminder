@@ -39,7 +39,8 @@ class DayView @JvmOverloads constructor(
         color = ContextCompat.getColor(context, R.color.green65)
     }
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private lateinit var rectF :   RectF
+    private val mWidth = width
+    private val mHeight = height
 
     private val bounds = Rect()
     private val drawingRect = RectF()
@@ -59,11 +60,6 @@ class DayView @JvmOverloads constructor(
     private var isNumber: Boolean = false
     private var header = ""
 
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
-        super.onSizeChanged(w, h, oldw, oldh)
-        rectF = RectF(5F,5f,width.toFloat()-5,height.toFloat()-5)
-    }
-
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         val width = width
@@ -79,15 +75,14 @@ class DayView @JvmOverloads constructor(
 
         if (dayIsSelected) {
             canvas.drawRoundRect(
-              rectF, 20f,  20f,
+              drawingRect, 20f,  20f,
                 selectedPaint
             )
 
         }
 
         if (today) {
-            rectF.inset(1F,1F)
-            canvas.drawRoundRect(rectF, 20f,  20f, todayPaint)
+            canvas.drawRoundRect(drawingRect, 20f,  20f, todayPaint)
         }
 
         val color: Int = if (isNumber) {
@@ -100,7 +95,7 @@ class DayView @JvmOverloads constructor(
         }
 
         if (!isNumber){
-            headerPaint.color  = ContextCompat.getColor(context, R.color.header_color)
+            headerPaint.color  = ContextCompat.getColor(context, R.color.background_view_pager_color)
             headerRect.set(0F,0F+2 , width.toFloat() , drawingRect.height() +10)
             canvas.drawRoundRect(headerRect,0F,0F ,headerPaint )
         }
